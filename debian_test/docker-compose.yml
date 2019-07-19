@@ -1,0 +1,17 @@
+version: "3.7"
+services:
+    test:
+        image: test:latest
+        deploy:
+         replicas: 5
+        network
+        volumes:
+         - ornicar:/chaloupe
+  
+volumes:
+    ornicar:
+     driver_opts:
+       diver: "local"
+       type: "none"
+       o: "bind"
+       device: "."
