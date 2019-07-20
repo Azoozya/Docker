@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+   lama:
+    image: tshark:latest
+    deploy:
+     replicas: 1
+    networks:
+     - local
+    ports:
+     - 19:19
+     - 813:813
+     - 814:814
+
+networks:
+ local:
+
