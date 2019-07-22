@@ -1,0 +1,22 @@
+{
+	"capture":{
+		   "commande":"tshark -i [interface] -w [filename] -F [format]",
+		   "interface":"tshark -D , pour obtenir la liste des interfaces dispo.",
+		   "filename":"Si capturé en root ,  le fichier doit être savec dans sous /root/ .",
+		   "format":"tshark -F , pour obtenir la liste des formats dispo , pcapgng par défaut.",
+		   "restriction_nb_pacquets":"-c [Int] , arrête d'enregistrer à [Int] paquets.",
+		   "restriction_nb_secondes":"-a duration:[Int] , arrête d'enregistrer au bout de [Int] secondes.",
+		   "restriction_nb_octets":"-a filesize:[Int] , arrête d'enregistrer quand le fichier dépasse [Int] KB de volume.",
+		   "restriction_nb_fichiers":"-a files:[Int] , arrête d'enregistrer quand l'enregistrement a généré [Int] fichiers.",
+		   "exemple":"sudo tshark -i any -w /root/wiresentry.pcap -F pcap -a duration:10",
+		  },
+	"lecture":{
+		   "commande":"tshark -r [filename] -T [format] [filtres]",
+		   "filename":"si l'enregistrement a été fait en root , le fichier doit être dans /root/ .",
+		   "format":"psml|ps|psml|json|jsonraw|ek|tabs|text|fields supportés , redirige la sortie dans un fichier au format défini.",
+		   "filtres":"ip.src , ip.dst , tcp.port==8888 ou autres filtres de wireshark.",
+		   "filtre_protocole":"-O [protocole1],[protocole2]... , ne conserve que les pacquets des protocoles cités.",
+		   "multiple_filtre":"-Y "(filtre1)&&(filtre2)&&...)".",
+		   "exemple":"sudo tshark -r /root/wiresentry.pcap tcp.port==80 -T json",
+		   },
+},

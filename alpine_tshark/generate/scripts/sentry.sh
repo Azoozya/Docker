@@ -26,5 +26,7 @@ while [ `cat $foldername/trame.json | wc -c | cut -c 1-${#-}` -gt 6 ];do
   done
 done
 
+cp -r $year* /archive
+bash
 ## compression ?
 ## envoi ?
